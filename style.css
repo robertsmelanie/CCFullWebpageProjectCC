@@ -1,0 +1,252 @@
+/* Importing the Lato Google Font (Regular and Bold) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Basic Style */
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+    background-color: #f4f4f4;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    /* The overflow property determines what to do if content overflows an element's box. Setting overflow to hidden will hide/clip the overflowing content */
+    overflow: hidden;
+}
+
+ul{
+    margin: 0%;
+    padding: 0%;
+    /* List-style: none; */
+}
+
+.btn-1{
+    height: 38px;
+    background-color: #eb4442;
+    border: 0;
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
+    padding: 0 20px 0 20px;
+    /* Shorthand top, right, bottom, left (aka clockwise) */
+    /* or */
+    /* top/bottom, left/right */
+    padding: 0 20px;
+    color: #fff;
+}
+
+.light, .dark {
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
+}
+
+.light {
+    background-color: #e6e6e6;
+    color: #2d2b3e;
+}
+
+.dark {
+    background-color: #2d2b3e;
+    color: #e6e6e6;
+}
+
+/* Header */
+header {
+    background-color: #2d2b3e;
+    color: #e6e6e6;
+    /* Setting min-height so the height for the header section can expand if needed */
+    min-height: 70px;
+    border-bottom: 3px solid #eb4442;
+    padding: 5px 0;
+
+    /* Margin outside border, padding inside border */
+    /* M B P C (Outside - in) Margin, Border, Padding, Content */
+}
+
+header > .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header li {
+    list-style: none;
+    padding: 0 20px;
+}
+
+header a {
+    /* A tags do not inherit color styling from a parent so they must be specifically assigned.  */
+    color: #e6e6e6;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+#highlight, #current a{
+    color: #eb4442;
+    font-weight: 700;
+    /* or font-weight: bold; */
+
+}
+
+/* Specificity battle */
+/* We need to be this specific because we just used #current a and it must be included to work */
+#current a:hover, a:hover  {
+    color: #ccc;
+    font-weight: 700;
+}
+
+/* Showcase */
+#showcase {
+    min-height: 400px;
+    background-image: url("Images/laptop.png");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+#showcase h1 {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-size: 55px;
+}
+
+#showcase p {
+    font-size: 20px;
+}
+
+/* Newsletter */
+#newsletter {
+    background-color: #2d2b3e;
+    padding: 15px;
+    color: #e6e6e6;
+}
+/* beak > indicates a directly nested element (direct child) of the element  */
+#newsletter > .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#newsletter input{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+/* Boxes */
+#boxes {
+    margin-top: 20px;
+}
+
+#boxes > .container {
+    display: flex;
+    justify-content: space-between;    
+}
+
+.box {
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+}
+
+i{
+    font-size: 150px;
+}
+
+.fa-html5 {
+    color: tomato;
+}
+
+.fa-css3-alt {
+    color: #2d50dc;
+}
+
+.fa-square-js {
+    color: #f3df50;
+}
+
+/* About */
+#about{
+    background-color: #2d2b3e;
+    padding: 20px;
+}
+#about > .container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 50px;
+}
+#about .main-col{
+    color: #fff;
+}
+#about .sidebar{
+    margin-top: 10px;
+}
+/* Services */
+#services > .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 40px;
+}
+#services li {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 5px;
+    background-color: #e6e6e6;
+}
+
+#services .sidebar {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+/* Comma below means AND */
+#services input, #services textarea {
+    padding: 5px;
+    width: 90%;
+}
+
+/* Footer */
+footer {
+    background-color: #2d2b3e;
+    color: #e6e6e6;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+} 
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header > .container, 
+    #newsletter > .container, 
+    #boxes > .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+ 
+    #showcase .container {
+        padding-bottom: 50px;
+    }
+
+    .box {
+        width: 80%;
+    }
+
+    #about > .container,
+    #services > .container {
+        grid-template-columns: 1fr;
+    }
+}  
